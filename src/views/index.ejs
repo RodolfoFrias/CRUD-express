@@ -1,0 +1,74 @@
+<% include parts/_header %>
+
+   <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="apellidos" class="form-control" placeholder="Apellidos">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="form-label">Área</label>
+                            <select required name="area" id="rol" class="form-control">
+                                <option value="0" selected>-----</option>
+                                <option value="Desarrollo">Desarrollo</option>
+                                <option value="Testing">Testing</option>
+                                <option value="Ventas">Ventas</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="especialidad" class="form-control" placeholder="Especialidad">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="carrera" class="form-control" placeholder="Carrera">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Agregar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Area</th>
+                        <th>Especialidad</th>
+                        <th>Carrera</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                 
+                <tbody>
+                   <% for(let i =  0; i < users.length; i++){  %>
+                       <tr>
+                           <td><%= i + 1 %></td>
+                           <td><%= users[i].nombre %></td>
+                           <td><%= users[i].apellidos %></td>
+                           <td><%= users[i].area %></td>
+                           <td><%= users[i].especialidad %></td>
+                           <td><%= users[i].carrera %></td>
+                           <td>
+                               <a href="/edit/<%= users[i]._id %>" class="btn btn-info">Edit</a>
+                               <a href="/delete/<%= users[i]._id %>" class="btn btn-danger">Delete</a>
+                           </td>
+                       </tr> 
+                    <% } %>  
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+   </div>
+
+<% include parts/_footer %>

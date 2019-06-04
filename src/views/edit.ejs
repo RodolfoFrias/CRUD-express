@@ -1,0 +1,36 @@
+<% include parts/_header %>
+
+<div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <form action="/add" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="apellidos" class="form-control" placeholder="Apellidos">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="form-label">Área</label>
+                        <select required name="area" id="rol" class="form-control">
+                            <option value="0" selected>-----</option>
+                            <option value="Desarrollo">Desarrollo</option>
+                            <option value="Testing">Testing</option>
+                            <option value="Ventas">Ventas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="especialidad" class="form-control" placeholder="Especialidad">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="carrera" class="form-control" placeholder="Carrera">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Agregar
+                    </button>
+                </form>
+            </div>
+        </div>
+</div>
+
+<% include parts/_footer %>

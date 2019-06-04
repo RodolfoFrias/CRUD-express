@@ -1,0 +1,25 @@
+{
+  "name": "crud_express",
+  "version": "1.0.0",
+  "description": "CRUD using NodeJs and ExpressJS",
+  "main": "index.js",
+  "scripts": {
+   "start": "node src/app.js",
+   "dev": "nodemon src/app.js"
+  },
+  "keywords": [
+    "NodeJS",
+    "ExpressJS"
+  ],
+  "author": "Rodolfo Frías",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.4",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}
